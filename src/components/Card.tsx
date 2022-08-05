@@ -8,8 +8,9 @@ import capitalize from "../utils/capitalize"
 import "react-lazy-load-image-component/src/effects/blur.css"
 import Modal from "./Modal"
 
-function Card({ pokemon }: CardProps) {
+function Card({ pokemon, index }: CardProps) {
   const { name, type, imageUrl } = pokemon
+  console.log(index)
 
   const [showModal, setShowModal] = useState<boolean>(false)
 
@@ -39,8 +40,9 @@ function Card({ pokemon }: CardProps) {
             style={{ height: "150px", width: "150px", borderRadius: "50%" }}
           />
         </div>
-        <div className='flex-1 p-4 space-y-2 flex items-center justify-center	 flex-col select-none'>
-          <h3 className=' py-2   text-dark font-bold'>{capitalize(name)}</h3>
+        <div className='flex-1 p-4 flex items-center justify-center	 flex-col select-none'>
+          <h3 className='bg-stone-400	rounded-lg p-3 font-bold text-white'>#{index}</h3>
+          <h3 className='text-dark font-bold'>{capitalize(name)}</h3>
           <div className=' flex gap-3'>
             <div key={uuid()} className='rounded-xl px-4 text-center font-bold py-2 border-0 '>
               {type[0]}

@@ -2,7 +2,6 @@ import { useRef } from "react"
 import ReactDom from "react-dom"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import { v4 as uuid } from "uuid"
-import store from "../store"
 
 import { ModalProps, StatsProps } from "../interfaces/types"
 import capitalize from "../utils/capitalize"
@@ -66,15 +65,12 @@ function Modal({ setShowModal, pokemon }: ModalProps) {
 
               <div className='flex-1 p-4 space-y-2 flex items-center justify-center	 flex-col select-none'>
                 <div className=' flex gap-3 '>
-                  {type.map((item) => (
-                    <div
-                      key={uuid()}
-                      className='rounded-xl px-4 text-center	py-2 border border-gray-300'
-                      style={{ backgroundColor: store.colorTypes[item] }}
-                    >
-                      {item}
-                    </div>
-                  ))}
+                  <div
+                    key={uuid()}
+                    className='rounded-xl px-4 text-center font-bold py-2 border-0 '
+                  >
+                    {type[0]}
+                  </div>
                 </div>
               </div>
             </div>

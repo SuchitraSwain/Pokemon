@@ -42,5 +42,6 @@ export interface ModalProps {
 }
 
 export interface CardProps {
-  pokemon: PokemonData
+  pokemon: PokemonData,
+  index: number
 }
